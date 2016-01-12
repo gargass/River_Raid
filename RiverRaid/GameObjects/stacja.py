@@ -1,5 +1,6 @@
-from Obiekt import Obiekt
-from Stale import STACJA, SPEED
+
+from .obiekt import Obiekt
+from ..stale import *
 
 
 class Stacja(Obiekt):

@@ -1,5 +1,4 @@
-from Obiekt import Obiekt
-from Stale import BOMBA, SPEED
+from .obiekt import *
 
 
 class Bomba(Obiekt):

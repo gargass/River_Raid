@@ -1,0 +1,15 @@
+SAMOLOT = "RiverRaid/Resources/samolot.png"
+RZEKA = "RiverRaid/Resources/rzeka.bmp"
+MOST = "RiverRaid/Resources/most.bmp"
+PORAZKA = "RiverRaid/Resources/porazka.png"
+BALON = "RiverRaid/Resources/baloon.png"
+MYSLIWIEC = "RiverRaid/Resources/mysliwiec.png"
+STATEK = "RiverRaid/Resources/statek.png"
+RAKIETA_1 = "RiverRaid/Resources/rakieta_1.png"
+RAKIETA_2 = "RiverRaid/Resources/rakieta_2.png"
+BOMBA = "RiverRaid/Resources/bomba.png"
+STACJA = "RiverRaid/Resources/stacja.png"
+ABOUT = "RiverRaid/About_text.txt"
+WIDTH_GAME = 400
+HEIGHT_GAME = 600
+SPEED = 0.2

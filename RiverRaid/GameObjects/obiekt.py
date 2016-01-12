@@ -1,6 +1,8 @@
-from PyQt4 import QtCore, QtGui
-from Stale import WIDTH_GAME, HEIGHT_GAME
 
+from PyQt4 import QtCore, QtGui
+
+from . import *
+from ..stale import *
 
 class Obiekt(QtCore.QObject):
     def __init__(self, x, y, w, h, obraz):

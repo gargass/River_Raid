@@ -1,7 +1,8 @@
 import random
 
-from Obiekt import Obiekt
-from Stale import STATEK, WIDTH_GAME, SPEED
+from .obiekt import Obiekt
+
+from ..stale import *
 
 
 class Statek(Obiekt):
@@ -10,6 +11,7 @@ class Statek(Obiekt):
         self.speed = 1
         self.czy_wrog = True
         self.kierunek = random.choice([-1,1])
+
     def Move(self):
         max_left = 40
         max_right = WIDTH_GAME - 40

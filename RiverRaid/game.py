@@ -1,19 +1,21 @@
 import random
 
+from .GameObjects.balon import Balon
+from .GameObjects.most import Most
+from .GameObjects.mysliwiec import Mysliwiec
+from .GameObjects.rakieta1 import Rakieta1
+from .GameObjects.statek import Statek
+from .GameObjects.rakieta2 import Rakieta2
+from .GameObjects.rzeka import Rzeka
+from .GameObjects.porazka import Porazka
+from .GameObjects.samolot import Samolot
+from .GameObjects.stacja import Stacja
+from .GameObjects.bomba import Bomba
+
+from .stale import WIDTH_GAME
 from PyQt4 import QtGui, QtCore
 
-from Balon import Balon
-from Bomba import Bomba
-from Most import Most
-from Mysliwiec import Mysliwiec
-from Porazka import Porazka
-from Rakieta1 import Rakieta1
-from Rakieta2 import Rakieta2
-from Rzeka import Rzeka
-from Samolot import Samolot
-from Stacja import Stacja
-from Statek import Statek
-from Stale import WIDTH_GAME
+# from RiverRaid.GameObjects.Bomba import Bomba
 
 
 class Game(QtGui.QWidget):
@@ -44,7 +46,12 @@ class Game(QtGui.QWidget):
         self.stepStacje = 4
 
         self.razy = 150
-        self.max_elementow = 15
+        self.max_elementow = 30
+
+    def UstawParametry(self, zuzycie, balon, bomba):
+        self.stepBalon = balon
+        self.samolot.zuzycie = zuzycie
+        self.stepBomby = bomba
 
     def keyPressEvent(self, QKeyEvent):
         self.key = QKeyEvent.key()
@@ -241,7 +248,7 @@ class Game(QtGui.QWidget):
             self.LosowoWystrzal()
 
         if self.samolot.Wystrzal(self.lista_friend, self.key):
-            self.key = 'dupa'
+            self.key = QtCore.Qt.Key_S
 
 
         self.Move()

@@ -1,7 +1,7 @@
 from PyQt4 import QtGui, QtCore
 
-from Game import Game
-from Stale import WIDTH_GAME, HEIGHT_GAME
+from RiverRaid.game import Game
+from RiverRaid.stale import WIDTH_GAME, HEIGHT_GAME
 
 
 class CentralWidget(QtGui.QWidget):
@@ -18,7 +18,7 @@ class CentralWidget(QtGui.QWidget):
 
         self.step = 0
         self.czyPorazka = False
-
+        self.opcjeAktywne = False
 
         Canvas = QtGui.QGraphicsScene(0,0,WIDTH_GAME, HEIGHT_GAME)
 
@@ -112,15 +112,16 @@ class CentralWidget(QtGui.QWidget):
 
 
 
+
     def doAction(self):
+        if not self.opcjeAktywne:
+            if self.timer.isActive():
+                self.timer.stop()
+                self.startButton.setText('Start')
 
-        if self.timer.isActive():
-            self.timer.stop()
-            self.startButton.setText('Start')
-
-        else:
-            self.timer.start(1, self)
-            self.startButton.setText('Pauza')
+            else:
+                self.timer.start(1, self)
+                self.startButton.setText('Pauza')
 
 
 

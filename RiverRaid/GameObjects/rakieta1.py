@@ -1,6 +1,6 @@
-from Obiekt import Obiekt
-from Stale import RAKIETA_1, SPEED
 
+from .obiekt import Obiekt
+from ..stale import *
 
 class Rakieta1(Obiekt):
     def __init__(self, x, y):

@@ -1,5 +1,6 @@
-from Obiekt import Obiekt
-from Stale import RAKIETA_2, SPEED
+
+from .obiekt import Obiekt
+from ..stale import *
 
 
 class Rakieta2(Obiekt):

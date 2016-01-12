@@ -1,9 +1,8 @@
 import random
 
-from Obiekt import Obiekt
-from Rakieta2 import Rakieta2
-from Stale import MYSLIWIEC, SPEED
-
+from .obiekt import Obiekt
+from .rakieta2 import Rakieta2
+from ..stale import *
 
 class Mysliwiec(Obiekt):
     def __init__(self, x, y):

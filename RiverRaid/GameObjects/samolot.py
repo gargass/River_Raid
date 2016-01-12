@@ -1,8 +1,9 @@
 from PyQt4 import QtCore
 
-from Obiekt import Obiekt
-from Stale import SAMOLOT, WIDTH_GAME, HEIGHT_GAME, SPEED
-from Rakieta1 import Rakieta1
+
+from .obiekt import Obiekt
+from .rakieta1 import Rakieta1
+from ..stale import *
 
 
 class Samolot(Obiekt):
@@ -18,7 +19,7 @@ class Samolot(Obiekt):
         self.UstawWarstwe(0)
 
     def Wystrzal(self, lista, key):
-        if key == QtCore.Qt.Key_W:
+        if self.czy_istnieje and key == QtCore.Qt.Key_W:
 
             rakieta = Rakieta1(self.S.x(), self.S.y())
             lista.append(rakieta)
@@ -26,19 +27,20 @@ class Samolot(Obiekt):
         return False
 
     def ZuzyjPaliwo(self):
-        self.paliwo = max(0,self.paliwo - self.zuzycie*0.1*SPEED)
-        if self.paliwo == 0:
-            self.zycie = 0
+        if self.czy_istnieje:
+            self.paliwo = max(0,self.paliwo - self.zuzycie*0.1*SPEED)
+            if self.paliwo == 0:
+                self.zycie = 0
 
 
     def Move(self, key):
+        if self.czy_istnieje:
+            if key == QtCore.Qt.Key_A:
+                self.UstawPozycje(max(self.S.x() - self.speed * SPEED, 0 + 1/2*self.w), self.S.y())
+            if key == QtCore.Qt.Key_D:
+                self.UstawPozycje(min(self.S.x() + self.speed * SPEED, WIDTH_GAME - 1/2*self.w), self.S.y())
 
-        if key == QtCore.Qt.Key_A:
-            self.UstawPozycje(max(self.S.x() - self.speed * SPEED, 0 + 1/2*self.w), self.S.y())
-        if key == QtCore.Qt.Key_D:
-            self.UstawPozycje(min(self.S.x() + self.speed * SPEED, WIDTH_GAME - 1/2*self.w), self.S.y())
-
-        self.ZuzyjPaliwo()
+            self.ZuzyjPaliwo()
 
     def PodajPozycje(self):
         return self.x

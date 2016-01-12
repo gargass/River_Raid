@@ -1,5 +1,6 @@
-from Obiekt import Obiekt
-from Stale import MOST, WIDTH_GAME, SPEED
+
+from .obiekt import Obiekt
+from ..stale import *
 
 
 class Most(Obiekt):

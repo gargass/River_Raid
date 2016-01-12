@@ -1,5 +1,6 @@
-from Obiekt import Obiekt
-from Stale import RZEKA, WIDTH_GAME, HEIGHT_GAME, SPEED
+
+from .obiekt import Obiekt
+from ..stale import *
 
 
 class Rzeka(Obiekt):

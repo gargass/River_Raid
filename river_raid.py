@@ -2,7 +2,7 @@ import sys
 
 from PyQt4 import QtGui
 
-from Menu import Menu
+from RiverRaid.menu import Menu
 
 
 def main():

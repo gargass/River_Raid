@@ -1,5 +1,6 @@
-from Obiekt import Obiekt
-from Stale import PORAZKA, WIDTH_GAME, HEIGHT_GAME
+
+from .obiekt import Obiekt
+from ..stale import *
 
 
 class Porazka(Obiekt):
